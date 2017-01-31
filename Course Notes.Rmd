@@ -1,0 +1,70 @@
+---
+title: "Machine Learning Course Notes and Excercises"
+output: html_notebook
+---
+
+This **Notebook** is my place for notes and practical applications for the course on [Machine Learning](https://www.udemy.com/machinelearning/learn/v4/overview) by [Kirill Eremenko](https://www.linkedin.com/in/keremenko), later I will produce another one with excercises from the CETYS project by the [group](https://da4ih.github.io) I am a member of.
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+
+## Data Preprocessing
+
+### Importing the dataset
+To import the data set one has to do the following:  
+
+* Find the directory where the dataset is located at.
+* Make that directory the "working directory".
+```{r}
+setwd("D:/Dropbox/Clases/Udemy/Machine Learning A-Z/machinelearning/Part 1 - Data Preprocessing/Section 2 -------------------- Part 1 - Data Preprocessing --------------------")
+
+dataset = read.csv('Data.csv')
+
+dataset
+```
+
+
+It is important to remember that in **R** indexing starts at 1 instead of 0, which is the case in **Python**.
+
+### Dealing With Missing Data
+
+When facing missing data in entries one could think of 2 approaches up till now:
+
+1. Delete all entries with missing data. (**This is not cool and very very dangerous**, cause it could eliminate data that could influence the end result).
+1. Calculate the ***mean*** according of all the data in the same variable from the other entries and replace the missing value.
+    + This is the approach that will be used in this analysis.
+
+#### Dealing with the **Age** Column
+```{r}
+dataset$Age = ifelse(is.na(dataset$Age),
+                     ave(dataset$Age, FUN = function(x) mean(x, na.rm = TRUE)),
+                     dataset$Age)
+dataset
+```
+
+### Dealing with the **Salary** Column
+
+```{r}
+dataset$Salary = ifelse(is.na(dataset$Salary),
+                     ave(dataset$Salary, FUN = function(x) mean(x, na.rm = TRUE)),
+                     dataset$Salary)
+dataset
+```
+
+Function **`ifelse`** takes three arguments:  
+
+1. Condition.
+2. Value wanted to be inputed if the condition is true.
+3. Value wanted to be inputed if the condition is false.
+  
+
+<!--
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. -->
+
+<!--```{r}
+plot(cars)-->
+
+
+<!-- Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).-->
