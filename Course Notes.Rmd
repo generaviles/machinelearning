@@ -42,7 +42,7 @@ dataset$Age = ifelse(is.na(dataset$Age),
 dataset
 ```
 
-### Dealing with the **Salary** Column
+#### Dealing with the **Salary** Column
 
 ```{r}
 dataset$Salary = ifelse(is.na(dataset$Salary),
@@ -56,7 +56,76 @@ Function **`ifelse`** takes three arguments:
 1. Condition.
 2. Value wanted to be inputed if the condition is true.
 3. Value wanted to be inputed if the condition is false.
+
+### Categorical Variables
+
+Values that are reported with letters or in numbers not keeping it´s aritmethical value and relationships are called **categorical**, because they indicate *categories*. This type of data cannot be used *"as is"* in analysis with numerical values because it would generate errors. In order to be able to run analisys of these variables we have to ***encode*** them, which means to assign a numerical value to each of the categories.
+
+**This is achieved in R by factoring the values of the variables with categorical data**
+
+  - **Country Variable**
+```{r}
+dataset$Country = factor(dataset$Country,
+                         levels = c('France','Spain','Germany'),
+                         labels = c(1, 2, 3))
+dataset
+```
+
+  - **Purchased Variable**
+
+```{r}
+dataset$Purchased = factor(dataset$Purchased,
+                         levels = c('No','Yes'),
+                         labels = c(0, 1))
+dataset
+```
+
+### Splitting Dataset into Training and Test Set
+
+For this process it is important to install and load `caTools`. `r library(caTools)`
+
+```{r}
+set.seed(123)
+split = sample.split(dataset$Purchased, SplitRatio = 0.8)
+```
+
+This will generate a vector with results indicating either `True` or `False`, if true then it means that it has been chosen to be part of the *training* set, if false it means it has been chosen to be part of the *test* set.
+
+Now the training and test sets have to be separated so we can work on both independently, the following code get's this acomplished:
+
+```{r}
+training_set = subset(dataset, split == TRUE)
+test_set = subset(dataset, split == FALSE)
+
+```
   
+You can look at the **training_set** here:
+```{r}
+training_set
+```
+
+And the **test_set** here:
+```{r}
+test_set
+
+```
+
+### Feature Scaling
+
+I have to add the concetps of Eucledian Distance, Normalization and Standardization.
+
+```{r}
+training_set[, 2:3] = scale(training_set[, 2:3])
+test_set[, 2:3] = scale(test_set[, 2:3])
+```
+
+It is important to notice that only columns 2 and 3 were included in the feature scaling process because these are the only variables containing numerical values.
+
+You can see an example of the result of the process in the `test_set`:
+```{r}
+test_set
+```
+
 
 <!--
 Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. -->

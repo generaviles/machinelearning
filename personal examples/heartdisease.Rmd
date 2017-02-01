@@ -1,0 +1,46 @@
+---
+title: "My Own Excercises"
+output: html_notebook
+---
+This Notebook will be a repository of my initial excercises used to fully comprehend and internalized the concepts learned in the course.
+
+I am going to be working with the [Heart Disease Dataset](https://archive.ics.uci.edu/ml/datasets/Heart+Disease) from the UCI Machine Learning Repository. 
+
+## Data Preprocesing
+
+### Importing the Dataset
+
+The following code renders a table with the correct *headers* according to the remote repository:
+```{r}
+setwd("D:/Dropbox/Clases/Udemy/Machine Learning A-Z/machinelearning/personal examples")
+
+heartdata = read.table("processedva.txt", header = FALSE, sep = ",")
+
+colnames(heartdata) <- c("age", "sex", "cp", "trestbps", "chol", "fbs", "restecg", "thalach", "exang", "oldpeak", "slope", "ca", "thal", "num")
+
+head(heartdata)
+```
+### Adjusting the Dataset
+#### Getting rid of columns where almost everything is missing
+At plain sight one notices that column 12 and 13 contain mostly missing values. They will be of no use in the analysis, so we will get rid of them to be able to continue with the processing.
+
+```{r}
+heartdata <- heartdata[,-12,-13]
+head(heartdata)
+```
+
+#### Dealing with missing values
+
+
+<!--
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. -->
+
+<!--```{r}
+plot(cars)
+```-->
+
+<!--Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).-->
