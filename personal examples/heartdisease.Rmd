@@ -6,9 +6,9 @@ This Notebook will be a repository of my initial excercises used to fully compre
 
 I am going to be working with the [Heart Disease Dataset](https://archive.ics.uci.edu/ml/datasets/Heart+Disease) from the UCI Machine Learning Repository. 
 
-## Data Preprocesing
+## 1. Data Preprocesing
 
-### Importing the Dataset
+### 1.1 Importing the Dataset
 
 The following code renders a table with the correct *headers* according to the remote repository:
 ```{r}
@@ -20,8 +20,8 @@ colnames(heartdata) <- c("age", "sex", "cp", "trestbps", "chol", "fbs", "restecg
 
 head(heartdata)
 ```
-### Adjusting the Dataset
-#### Getting rid of columns where almost everything is missing
+#### 1.1.1 Adjusting the Dataset
+#### 1.1.2 Getting rid of columns where almost everything is missing
 At plain sight one notices that column 12 and 13 contain mostly missing values. They will be of no use in the analysis, so we will get rid of them to be able to continue with the processing.
 
 ```{r}
@@ -29,8 +29,55 @@ heartdata <- heartdata[,-12,-13]
 head(heartdata)
 ```
 
-#### Dealing with missing values
+### 1.2 Dealing with missing values
 
+##### 1.2.1 ***trestbps***
+
+Interestingly this variable was recorded in the **factor** format and not as an **integer**, first it is necessary to change the format:
+
+```{r}
+heartdata$trestbps <- as.numeric(levels(heartdata$trestbps))[heartdata$trestbps]
+class(heartdata$trestbps)
+```
+
+```{r}
+heartdata$trestbps = ifelse(is.na(heartdata$trestbps),
+                     ave(heartdata$trestbps, FUN = function(x) mean(x, na.rm = TRUE)),
+                     heartdata$trestbps)
+heartdata
+```
+
+##### 1.2.2 ***chol***
+
+This has the same problem as **trestbps**, we will convert it to ***integers*** and coherce `NAs`.
+```{r}
+heartdata$chol <- as.numeric(levels(heartdata$chol))[heartdata$chol]
+class(heartdata$chol)
+
+```
+Calculating missing data through euclidian distance `chol`
+
+```{r}
+heartdata$chol = ifelse(is.na(heartdata$chol),
+                     ave(heartdata$chol, FUN = function(x) mean(x, na.rm = TRUE)),
+                     heartdata$chol)
+heartdata
+```
+
+##### 1.2.3 ***thalach***
+```{r}
+heartdata$thalach <- as.numeric(levels(heartdata$thalach))[heartdata$thalach]
+class(heartdata$thalach)
+
+```
+Euclidian distance
+
+```{r}
+heartdata$thalach = ifelse(is.na(heartdata$thalach),
+                     ave(heartdata$thalach, FUN = function(x) mean(x, na.rm = TRUE)),
+                     heartdata$thalach)
+heartdata
+```
 
 <!--
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
