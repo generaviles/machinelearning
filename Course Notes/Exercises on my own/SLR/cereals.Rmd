@@ -1,0 +1,18 @@
+---
+title: "**The Cereal Dataset SLR Exercise**"
+output: html_notebook
+---
+
+##Quick Intro
+I am going to try to standardize the analysis and force myself to a methodology.<br \> Will be trying to follow these points:
+
+  1. Set the working directory to where the data is.
+  1. Data preprocessing.
+    - Choosing the right set of variables (in this case *rating* of a cereal and *sugar* content).
+    - Making sure there are no missing values.
+    - Cheking the type of values contained in the variables.
+    - Splitting dataset into training and test data sets.
+  1. Fitting SLR to *training set*.
+  1. Predicting *test set* results.
+  1. Visualizing *training set* results.
+

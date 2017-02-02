@@ -5,20 +5,22 @@ output: html_notebook
 <br \>
 
 
-A linear regression (LR) can be mathematically expressed as follows:
+A linear regression (LR) can be mathematically expressed with the ***Estimated Regression Equation (ERE)***, also called the regression equation:
 
-$$ y = b_0 + b_1 * x_1$$
+$$ y = b_0 + b_1x$$
 Where:
   
-  * $y$ is the **dependent variable (DV)** or what we are tryging to explain with the *LR*.
-  * $x$ is the **independent variable (IV)** or a direct or associated cause influencing the result of the *DV*.
-  * $b_1$ is the **coefficient** it tells us how a unit change in $x_1$ affects a change in $y$. It can be thought of the *connector* between $x$ and $y$.
-  * $b_0$ is the **constant**.
+  * $y$ is the **dependent variable (DV)** or the estimated value of the response value.
+  * $x$ is the **independent variable (IV)**, a direct or associated cause influencing the result of the *DV*.
+  * $b_1$ is the **coefficient**, it indicates the *slope* of the regression line. It tells us how a unit change in $x_1$ affects a change in $y$.
+  * $b_0$ is the **constant**, the *y-intercept* of the regression line.<br \>
+  
+  * $b_0$ and $b_1$, together are called the *regression factors*.
 
 A practical example of the application of a *LM*: if a boss wants to know how years in the work force affects salary to improve the way he set's payments for new workers. Salary would be the *DV* therefore represented on the *y* axis, experience the *IV* on the *x* axis. The constant is obtaind finding the place where the *fitting line* crosses the vertical axis. In our example this can be interpreted as follows:<br \>
 
 $$\text{When years of experience} = 0. \text{ Then the salary should be} = a.$$
-Where $a=$ the value on the vertical axis.
+Where $a=$ the value of $b$ that intercepts the vertical axis (*y-intercept*).
 
 $b_1$ is interpreted as the slope of the line in this example and it helps us answer the question: "How much more money should an employee get for every year of experience added?"<br \>
 
