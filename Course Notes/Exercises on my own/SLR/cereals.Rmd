@@ -16,3 +16,8 @@ I am going to try to standardize the analysis and force myself to a methodology.
   1. Predicting *test set* results.
   1. Visualizing *training set* results.
 
+## Set WD
+
+```{r}
+setwd("D:/Dropbox/Clases/Udemy/Machine Learning A-Z/machinelearning/Course Notes/Exercises on my own/SLR")
+```
