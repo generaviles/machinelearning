@@ -1,0 +1,82 @@
+---
+title: "Multiple Linear Regression MLR"
+output: html_notebook
+---
+
+
+MLR is an *extension* of **SLR**, mathematically it can be expressed as:
+
+$$ y = b_0 + b_1x_1 + b_2x_2 +..b_kx_k$$
+In this model, we have more than one *independent* variable affecting one single *dependent* variable.
+
+### Dummy Variables
+
+These type of variables are used when some of the independent variables in a dataset are **categorigal** (nominal or ordinal). It is important to identify how many different categories the variable holds, once that is done a column (new variable) has to be generated for each category.
+
+The following image clarifies this concept using an image from a business analytics excercise:
+
+![](D:\Dropbox\Clases\Udemy\Machine Learning A-Z\machinelearning/dummy.png)
+<br \>
+<br \>
+These variables are of a **binary** nature.
+
+#### The Dummy Variable Trap
+
+
+  - The phenomenon in which one or more independent variables in a linear regression model predict another one ($D_2 = 1-D_1 \therefore{} D_1 = 1-D_2$) is called [**multicollinearity**](http://blog.minitab.com/blog/adventures-in-statistics-2/what-are-the-effects-of-multicollinearity-and-when-can-i-ignore-them).
+  - Therefore one should always leave one dummy variable out of the equation, indistinctly of the ammount of dummy variables generated.
+  - **Important Tip**:The process of using all but one dummy variable has to be applyed to each set of these variables generated.
+
+### Constructing a Model
+
+There are 5 methods for constructing a model:
+
+  1. All-in
+  1. Backward Elimination
+  1. Forward Selection
+  1. Bidirectional Elimination
+  1. Score Comparison
+
+#### All-in
+It referes to the variables, where **all** of them are considered in making the model. This is usually done when:
+
+  - There is prior domain knowledge.
+  - It has to be done this way.
+  - In preparation for *Backward Elimination*.
+
+#### Backwaerd Elimination
+
+Steps to follow:
+
+  1. Select a significance level to stay in the model (e.g.SL = 0.05)
+  1. Fit the full model with all possible predictors
+  1. Consider the predictor with the **highest** P-value. If P > SL, then move on to step 4, otherwise your model is ready.
+  1. Remiove the predictor.
+  1. Fit model without this variable and go back to step 3.
+
+#### Forward Selection
+
+Steps to follow:
+
+  1. Select a significance level to enter the model (SL = 0.05)
+  1. Fit all simple regression models $y \text{~} x_n$. Select the one with the lowest P-value.
+  1. Keep this variable and fit all possible models with one extra predictor added to the one(s) you already have.
+  1. Consider the predictor with the **lowest** P-value out of step 3. If P < SL, go to Step 3, otherwise your model is finished.
+
+#### Bidirectional Elimination
+
+Steps to follow:
+
+  1. Select a significance level to enter and to stay in the model (e.g SLENTER = 0.05, SLSTAY = 0.05)
+  1. Perform the next step of **Forward Selection** (new variables must have: P < SLENTER to enter)
+  1. Perform **ALL** steps of ***Backward Elimination*** (old variables must have P < SLSTAY to stay). Go back to Step 2.
+  1. No new variables can enter and no old variables can exit. Model is ready.
+  
+#### Score Comparison or *All Posible Models*
+
+Steps to Follow:
+
+  1. Select a criterion of goodness of fit (e.g. Akaike criterion, $r^2$, etc)
+  1. Construct all possible regression models: $2^N-1$ total combinatios.
+  1. Select the one with the best criterion.
+  1. Model is ready.

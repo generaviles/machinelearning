@@ -21,3 +21,95 @@ I am going to try to standardize the analysis and force myself to a methodology.
 ```{r}
 setwd("D:/Dropbox/Clases/Udemy/Machine Learning A-Z/machinelearning/Course Notes/Exercises on my own/SLR")
 ```
+
+## Data Preprocessing
+
+### Setting up the dataset in a suitable format
+
+Data for this exercise was aquired online in a space separated .csv document. There are no missing values and the variables of interest for this analysis are numerical.
+
+```{r}
+
+# Reading data into a table format WITHOUT a header.
+dataset <- read.table('cereal.csv', sep = '', header = TRUE)
+
+# Adding variable names as headers to the dataset
+#names(dataset) <- c('name', 'mfr', 'type', 'calories', 'protein', 'fat', 'sodium', 'fiber', 'carbo', 'sugars', 'shelf', 'potass', 'vitamins', 'weight', 'cups')
+
+#Visualizing the first 10 entries.
+head(dataset)
+```
+
+### Selecting the variables `sugars` y `rating`
+
+Only 2 variables are going to be used in this analysis, so a new dataset is generated containing the name of the product plus the variables of interest.
+
+```{r}
+vars <- c("name", "sugars", "rating")
+
+datasetlm <- dataset[vars]
+
+head(datasetlm)
+```
+
+### Splitting the dataset into `training` and `test`.
+
+We will go with a split ratio of 70% for the training set and 30% for the test set.<br \>
+It is improtant to remember that `rating` will be the dependent variable and `sugar` the independent one.
+
+```{r}
+library(caTools)
+set.seed(123)
+
+split <- sample.split(datasetlm$rating, SplitRatio = 2/3)
+training_set <- subset(datasetlm, split == TRUE)
+test_set <- subset(datasetlm, split == FALSE)
+
+```
+
+## Fitting SLR to `training_set`
+
+```{r}
+regressor <- lm(formula = rating ~ sugars,
+                data = training_set)
+summary(regressor)
+```
+
+The `summary` of the `regressor` on the variables`rating` as dependent and `sugars` as independet reports a $p = 1.15^{-15}$, therefore these variables are **strongly related**.
+
+## Predicting `test_set` results
+
+```{r}
+y_pred <- predict(regressor, newdata = test_set)
+```
+
+## Visualization
+
+### Training_set
+```{r}
+library(ggplot2)
+
+ggplot() +
+  geom_point(aes(x = training_set$sugars, y = training_set$rating),
+             colour = 'red') +
+  geom_line(aes(x = training_set$sugars, y = predict(regressor, newdata = training_set)),
+            colour = 'blue') +
+  ggtitle('Nutritional Rating vs Sugars (training_set)') +
+  xlab('Amount of Sugar') +
+  ylab('Nut.Rating')
+```
+
+### Test_set
+
+```{r}
+library(ggplot2)
+
+ggplot() +
+  geom_point(aes(x = test_set$sugars, y = test_set$rating),
+             colour = 'red') +
+  geom_line(aes(x = training_set$sugars, y = predict(regressor, newdata = training_set)),
+            colour = 'blue') +
+  ggtitle('Nutritional Rating vs Sugars (test_set)') +
+  xlab('Sugars') +
+  ylab('Nut.Rating')
+```
