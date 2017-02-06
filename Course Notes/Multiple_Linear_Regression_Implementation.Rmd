@@ -67,3 +67,58 @@ Some important things to notice:
   
 According to the resutls from the `regressor` a very important conclussion can be drawn: `R.D.Spend` is the only variable, out of all the independent ones, that has a strong statistical impact on the independent variable `Profit`.
 
+### Predicting the `test_set` Results
+
+```{r}
+y_pred <- predict(regressor, newdata = test_set)
+```
+
+### **Backward Elimination**
+
+Once a MLR model is done, it can be optimized through backward elimination, this doucment shows how to do this process in R.
+
+We will be following the seps outlined in the following picture:
+
+![](D:\Dropbox\Clases\Udemy\Machine Learning A-Z\machinelearning\backmlr.png)
+
+### Step 1 & 2
+
+  - The significance level in this excersise will be  $SL = 0$.
+  - Fitting the full model with all possible predictors is achieved generating the `regressor` using the following code:
+
+```{r}
+regressor <- lm(formula = Profit ~ R.D.Spend + Administration + Marketing.Spend + State,
+                data = dataset) #In this case the whole dataset is being used, training_set can also be used.
+summary(regressor)
+
+```
+
+### Step 3 & 4
+
+  - By looking at the `summary(regressor)` results, we can see that the predictor (*independent variable*) with the highest *P* value is `State2` which means **California**. `State3` is the second highest *P* value and there is no way that it will become statistically significant by removing only one. This allows us to remove the variable `State` from the model and run step 5.
+  
+### Step 5
+
+Fitting the model without the variable `State`:
+
+```{r}
+regressor <- lm(formula = Profit ~ R.D.Spend + Administration + Marketing.Spend,
+                data = dataset) #In this case the whole dataset is being used, training_set can also be used.
+summary(regressor)
+```
+  
+### Iteration Steps
+
+Fitting the model without `State` and moving on with the iteration steps shown on the previous picture takes us to make the following changes:
+
+  1. Take out the variable  `Administration` since it's *P* value is = 0.602.
+  1. Fit the model without the variable:
+  
+```{r}
+regressor <- lm(formula = Profit ~ R.D.Spend + Marketing.Spend,
+                data = dataset) #In this case the whole dataset is being used, training_set can also be used.
+summary(regressor)
+y_pred <- predict(regressor, newdata = test_set)
+```
+
+**I decided to keep `Marketing.Spend` because I think it gives me results closer to the real `test_set` results.**
