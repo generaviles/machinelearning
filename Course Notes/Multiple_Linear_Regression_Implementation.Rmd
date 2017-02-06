@@ -1,0 +1,69 @@
+---
+title: "Multiple Linear Regression Implementation in R"
+output: html_notebook
+---
+
+
+### Setting the WD
+
+```{r}
+setwd("D:/Dropbox/Clases/Udemy/Machine Learning A-Z/Part 2 - Regression/Section 5 - Multiple Linear Regression")
+```
+
+### Data Preprocessing
+
+We will be using the same data preprocessing template used in previous excercises:
+A few things to remember:
+
+  - Shince there is a variable with categorical values it has to be encoded.
+  - There is no need to do feature scaling since the function used in R will take care of that already.
+```{r}
+# Data Preprocessing template
+
+# Importing the dataset
+dataset = read.csv('50_Startups.csv')
+# dataset = dataset[, 2:3]
+
+#Encoding Categorical Data, this is important because a regression model cannot work with categorical values.
+dataset$State <- factor(dataset$State,
+                        levels = c('New York', 'California', 'Florida'),
+                        labels = c(1, 2, 3))
+
+# Splitting the dataset into the Training set and Test set
+# install.packages('caTools')
+library(caTools)
+set.seed(123)
+split = sample.split(dataset$Profit, SplitRatio = 0.8)
+training_set = subset(dataset, split == TRUE)
+test_set = subset(dataset, split == FALSE)
+
+# Feature Scaling
+# training_set[, 2:3] = scale(training_set[, 2:3])
+# test_set[, 2:3] = scale(test_set[, 2:3])
+```
+
+### Fitting Multiple Linear Regression to the Training Set
+
+First a `regressor` has to be generated to fit the training set, later on it will be used in the process.
+
+```{r}
+#regressor <- lm(formula = Profit ~ R.D.Spend + Administration + Marketing.Spend + State)
+
+regressor <- lm(formula = Profit ~ . , #Using the . tells R to add all the independent variables.
+                data = training_set) 
+```
+
+### Generating the `regressor`
+
+Taking a look at the `regressor` just generated can be done with the comand `summary()`, this will start showing us important imformation regarding the influence independent variables might have on the dependent one.
+```{r}
+summary(regressor)
+```
+
+Some important things to notice:
+
+  - R has already taken care of the *dummy variable* creation for `State`.
+  - R has also staid out of the **dummy variable trap** and kept one of the tree generated out of the calculations.
+  
+According to the resutls from the `regressor` a very important conclussion can be drawn: `R.D.Spend` is the only variable, out of all the independent ones, that has a strong statistical impact on the independent variable `Profit`.
+
