@@ -1,0 +1,8 @@
+---
+title: "Dimensionality Reduction Generalities"
+output: html_notebook
+---
+
+Most databases in the context of big data will have millions of entries and thousands of variables (columns), it is imposible that each column will contain independent variables, this high volume and high quantity of variables makes it easier for scientist to fall on the trap of ***multicollinearity*** (*multicolinealidad*), defined as the condition where some predictor variables (independent) are correlated with each other.
+
+
