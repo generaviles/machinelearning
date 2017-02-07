@@ -3,6 +3,13 @@ title: "Dimensionality Reduction Generalities"
 output: html_notebook
 ---
 
-Most databases in the context of big data will have millions of entries and thousands of variables (columns), it is imposible that each column will contain independent variables, this high volume and high quantity of variables makes it easier for scientist to fall on the trap of ***multicollinearity*** (*multicolinealidad*), defined as the condition where some predictor variables (independent) are correlated with each other.
+Most databases in the context of big data will have millions of entries and thousands of variables (columns), it is imposible that each column will contain independent variables, this high volume and high quantity of variables makes it easier for scientist to fall on the trap of ***multicollinearity*** (*multicolinealidad*), defined as the condition where some predictor variables (independent) are correlated with each other. This tends to produce conclussions heavily biased on one or a set of predictors more than others, rendering false results.
 
+*Need to write a bit more about the benefits or need to work with low dimension data (1-5 dimensions perhaps.)*
+
+Applying dimension reduction methods can help us acomplish the following:
+
+  - Redduce the number of predictor components.
+  - Help ensure that these components are independent.
+  - PRovide a framework for interpretability of the results.
 

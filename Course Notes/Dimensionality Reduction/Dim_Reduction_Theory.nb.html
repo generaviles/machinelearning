@@ -172,10 +172,17 @@ $(document).ready(function () {
 
 
 <!-- rnb-text-begin -->
-<p>Most databases in the context of big data will have millions of entries and thousands of variables (columns), it is imposible that each column will contain independent variables, this high volume and high quantity of variables makes it easier for scientist to fall on the trap of <strong><em>multicollinearity</em></strong> (<em>multicolinealidad</em>), defined as the condition where some predictor variables (independent) are correlated with each other.</p>
+<p>Most databases in the context of big data will have millions of entries and thousands of variables (columns), it is imposible that each column will contain independent variables, this high volume and high quantity of variables makes it easier for scientist to fall on the trap of <strong><em>multicollinearity</em></strong> (<em>multicolinealidad</em>), defined as the condition where some predictor variables (independent) are correlated with each other. This tends to produce conclussions heavily biased on one or a set of predictors more than others, rendering false results.</p>
+<p><em>Need to write a bit more about the benefits or need to work with low dimension data (1-5 dimensions perhaps.)</em></p>
+<p>Applying dimension reduction methods can help us acomplish the following:</p>
+<ul>
+<li>Redduce the number of predictor components.</li>
+<li>Help ensure that these components are independent.</li>
+<li>PRovide a framework for interpretability of the results.</li>
+</ul>
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkRpbWVuc2lvbmFsaXR5IFJlZHVjdGlvbiBHZW5lcmFsaXRpZXMiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpNb3N0IGRhdGFiYXNlcyBpbiB0aGUgY29udGV4dCBvZiBiaWcgZGF0YSB3aWxsIGhhdmUgbWlsbGlvbnMgb2YgZW50cmllcyBhbmQgdGhvdXNhbmRzIG9mIHZhcmlhYmxlcyAoY29sdW1ucyksIGl0IGlzIGltcG9zaWJsZSB0aGF0IGVhY2ggY29sdW1uIHdpbGwgY29udGFpbiBpbmRlcGVuZGVudCB2YXJpYWJsZXMsIHRoaXMgaGlnaCB2b2x1bWUgYW5kIGhpZ2ggcXVhbnRpdHkgb2YgdmFyaWFibGVzIG1ha2VzIGl0IGVhc2llciBmb3Igc2NpZW50aXN0IHRvIGZhbGwgb24gdGhlIHRyYXAgb2YgKioqbXVsdGljb2xsaW5lYXJpdHkqKiogKCptdWx0aWNvbGluZWFsaWRhZCopLCBkZWZpbmVkIGFzIHRoZSBjb25kaXRpb24gd2hlcmUgc29tZSBwcmVkaWN0b3IgdmFyaWFibGVzIChpbmRlcGVuZGVudCkgYXJlIGNvcnJlbGF0ZWQgd2l0aCBlYWNoIG90aGVyLg0KDQoNCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkRpbWVuc2lvbmFsaXR5IFJlZHVjdGlvbiBHZW5lcmFsaXRpZXMiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpNb3N0IGRhdGFiYXNlcyBpbiB0aGUgY29udGV4dCBvZiBiaWcgZGF0YSB3aWxsIGhhdmUgbWlsbGlvbnMgb2YgZW50cmllcyBhbmQgdGhvdXNhbmRzIG9mIHZhcmlhYmxlcyAoY29sdW1ucyksIGl0IGlzIGltcG9zaWJsZSB0aGF0IGVhY2ggY29sdW1uIHdpbGwgY29udGFpbiBpbmRlcGVuZGVudCB2YXJpYWJsZXMsIHRoaXMgaGlnaCB2b2x1bWUgYW5kIGhpZ2ggcXVhbnRpdHkgb2YgdmFyaWFibGVzIG1ha2VzIGl0IGVhc2llciBmb3Igc2NpZW50aXN0IHRvIGZhbGwgb24gdGhlIHRyYXAgb2YgKioqbXVsdGljb2xsaW5lYXJpdHkqKiogKCptdWx0aWNvbGluZWFsaWRhZCopLCBkZWZpbmVkIGFzIHRoZSBjb25kaXRpb24gd2hlcmUgc29tZSBwcmVkaWN0b3IgdmFyaWFibGVzIChpbmRlcGVuZGVudCkgYXJlIGNvcnJlbGF0ZWQgd2l0aCBlYWNoIG90aGVyLiBUaGlzIHRlbmRzIHRvIHByb2R1Y2UgY29uY2x1c3Npb25zIGhlYXZpbHkgYmlhc2VkIG9uIG9uZSBvciBhIHNldCBvZiBwcmVkaWN0b3JzIG1vcmUgdGhhbiBvdGhlcnMsIHJlbmRlcmluZyBmYWxzZSByZXN1bHRzLg0KDQoqTmVlZCB0byB3cml0ZSBhIGJpdCBtb3JlIGFib3V0IHRoZSBiZW5lZml0cyBvciBuZWVkIHRvIHdvcmsgd2l0aCBsb3cgZGltZW5zaW9uIGRhdGEgKDEtNSBkaW1lbnNpb25zIHBlcmhhcHMuKSoNCg0KQXBwbHlpbmcgZGltZW5zaW9uIHJlZHVjdGlvbiBtZXRob2RzIGNhbiBoZWxwIHVzIGFjb21wbGlzaCB0aGUgZm9sbG93aW5nOg0KDQogIC0gUmVkZHVjZSB0aGUgbnVtYmVyIG9mIHByZWRpY3RvciBjb21wb25lbnRzLg0KICAtIEhlbHAgZW5zdXJlIHRoYXQgdGhlc2UgY29tcG9uZW50cyBhcmUgaW5kZXBlbmRlbnQuDQogIC0gUFJvdmlkZSBhIGZyYW1ld29yayBmb3IgaW50ZXJwcmV0YWJpbGl0eSBvZiB0aGUgcmVzdWx0cy4NCg0K</div>
 
 
 
