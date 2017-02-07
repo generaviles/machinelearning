@@ -1,5 +1,21 @@
 ---
-title: "Principal Component Analysis"
+title: "Principal Component Analysis (PCA)"
 output: html_notebook
 ---
+<br \>
+<br \>
+PCA seeks to explain the correlation structure of a set of predictor variables using a smaller set of linear combinations (components) of these variables.
 
+
+## Implementation in R
+
+To run a PCA in R it is important to have the packages `caret` and `e1071` installed.
+
+### Creating the Variable PCA
+
+It will later be used to transform original dataset with the new extracted features.
+```{r}
+library(caret)
+library(e1071)
+pca <- preProcess()
+```
