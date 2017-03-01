@@ -185,20 +185,13 @@ $(document).ready(function () {
 </ul>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-output-begin eyJkYXRhIjoiVGhlIHdvcmtpbmcgZGlyZWN0b3J5IHdhcyBjaGFuZ2VkIHRvIEQ6L0Ryb3Bib3gvQ2xhc2VzL1VkZW15L01hY2hpbmUgTGVhcm5pbmcgQS1aL21hY2hpbmVsZWFybmluZy9QYXJ0IDEgLSBEYXRhIFByZXByb2Nlc3NpbmcvU2VjdGlvbiAyIC0tLS0tLS0tLS0tLS0tLS0tLS0tIFBhcnQgMSAtIERhdGEgUHJlcHJvY2Vzc2luZyAtLS0tLS0tLS0tLS0tLS0tLS0tLSBpbnNpZGUgYSBub3RlYm9vayBjaHVuay4gVGhlIHdvcmtpbmcgZGlyZWN0b3J5IHdpbGwgYmUgcmVzZXQgd2hlbiB0aGUgY2h1bmsgaXMgZmluaXNoZWQgcnVubmluZy4gVXNlIHRoZSBrbml0ciByb290LmRpciBvcHRpb24gaW4gdGhlIHNldHVwIGNodW5rIHRvIGNoYW5nZSB0aGUgdGhlIHdvcmtpbmcgZGlyZWN0b3J5IGZvciBub3RlYm9vayBjaHVua3MuXG4ifQ== -->
-<pre><code>The working directory was changed to D:/Dropbox/Clases/Udemy/Machine Learning A-Z/machinelearning/Part 1 - Data Preprocessing/Section 2 -------------------- Part 1 - Data Preprocessing -------------------- inside a notebook chunk. The working directory will be reset when the chunk is finished running. Use the knitr root.dir option in the setup chunk to change the the working directory for notebook chunks.</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuZGF0YXNldCA9IHJlYWQuY3N2KCdEYXRhLmNzdicpXG5kYXRhc2V0XG5gYGBcbmBgYCJ9 -->
-<p><code>r</code>r dataset = read.csv(‘Data.csv’) dataset</p>
-<pre><code></code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2V0d2QoXCJEOi9Ecm9wYm94L0NsYXNlcy9VZGVteS9NYWNoaW5lIExlYXJuaW5nIEEtWi9tYWNoaW5lbGVhcm5pbmcvUGFydCAxIC0gRGF0YSBQcmVwcm9jZXNzaW5nL1NlY3Rpb24gMiAtLS0tLS0tLS0tLS0tLS0tLS0tLSBQYXJ0IDEgLSBEYXRhIFByZXByb2Nlc3NpbmcgLS0tLS0tLS0tLS0tLS0tLS0tLS1cIilcblxuZGF0YXNldCA9IHJlYWQuY3N2KCdEYXRhLmNzdicpXG5cbmRhdGFzZXRcbmBgYCJ9 -->
+<pre class="r"><code>setwd(&quot;D:/Dropbox/Clases/Udemy/Machine Learning A-Z/machinelearning/Part 1 - Data Preprocessing/Section 2 -------------------- Part 1 - Data Preprocessing --------------------&quot;)
+
+dataset = read.csv('Data.csv')
+
+dataset</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjoiZGF0YS5mcmFtZSIsIm5jb2wiOjQsIm5yb3ciOjEwfSwicmRmIjoiSDRzSUFBQUFBQUFBQm5WU3pVckRRQkNlM1NRdERmZ0Rua1FRUVJRUE5ranB3YU5pVVU4aTlsS1BhN3B0ZytsdTJhVCszSHdFano2SzRDTjQ4eEY4QVBFSnFwTmtwN1doQnI3c3pPenM3UGQ5N0ZXcjAvQTdQZ0J3Y0J3TzNNSFE1ZmhqNEVJdFd4OEFuTFdzaXVzU3JuNitpVWwrYUxaU2pjM3l1VUdWV043Sk9NRm9OZSswMVZNalZDaHRWajJUWmlqVW8wMjk5a2hFcWpUSEMyT1IwSmpwOEo0SVUyMHdtaUNJNWo1aUE3R0oyRVhzSWJhZklQOE9FQTNFenJTZnJSOEJ2T0gyeHpmQTEzblI5L2tNOEw0RnJQa0NySFVJekhzdDJVRFNLZWFsT2kvbzh4L0xtRnZHL0VMYnlMbVdTZEhrVU5OQ1dmTXVLREdVNUlKTDlwM29zVW9OMmVjYzk4bllTbHZFWXJwUnV4eWJjQ0FTMlMxTnJSbDlIOURrVENXM2J2bi9FUFM3SWhWQnorQ1JCU1NyZXBSR1d1RXducjBncjNTWW1WSmhaYXl5eTd2MWNEQld0L1htSDV2QkVtSzJSckZiWE9rU01ZOEVTOVdQRk1uM1luRWpZNXNzbzhoY1l6QXlrVXBKQ1ZhVElOV3BvRDQvMURGVmluYzErUVV2ZDNXL0x3TUFBQT09In0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["Country"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["Age"],"name":[2],"type":["int"],"align":["right"]},{"label":["Salary"],"name":[3],"type":["int"],"align":["right"]},{"label":["Purchased"],"name":[4],"type":["fctr"],"align":["left"]}],"data":[{"1":"France","2":"44","3":"72000","4":"No"},{"1":"Spain","2":"27","3":"48000","4":"Yes"},{"1":"Germany","2":"30","3":"54000","4":"No"},{"1":"Spain","2":"38","3":"61000","4":"No"},{"1":"Germany","2":"40","3":"NA","4":"Yes"},{"1":"France","2":"35","3":"58000","4":"Yes"},{"1":"Spain","2":"NA","3":"52000","4":"No"},{"1":"France","2":"48","3":"79000","4":"Yes"},{"1":"Germany","2":"50","3":"83000","4":"No"},{"1":"France","2":"37","3":"67000","4":"Yes"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[10]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>It is important to remember that in <strong>R</strong> indexing starts at 1 instead of 0, which is the case in <strong>Python</strong>.</p>
@@ -217,17 +210,12 @@ $(document).ready(function () {
 <h4>1.2.1 Dealing with the <strong>Age</strong> Column</h4>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuZGF0YXNldCRBZ2UgPSBpZmVsc2UoaXMubmEoZGF0YXNldCRBZ2UpLFxuICAgICAgICAgICAgICAgICAgICAgYXZlKGRhdGFzZXQkQWdlLCBGVU4gPSBmdW5jdGlvbih4KSBtZWFuKHgsIG5hLnJtID0gVFJVRSkpLFxuICAgICAgICAgICAgICAgICAgICAgZGF0YXNldCRBZ2UpXG5kYXRhc2V0XG5gYGBcbmBgYCJ9 -->
-<p><code>r</code>r dataset<span class="math inline">\(Age = ifelse(is.na(dataset\)</span>Age), ave(dataset<span class="math inline">\(Age, FUN = function(x) mean(x, na.rm = TRUE)),  dataset\)</span>Age) dataset</p>
-<pre><code></code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0YXNldCRBZ2UgPSBpZmVsc2UoaXMubmEoZGF0YXNldCRBZ2UpLFxuICAgICAgICAgICAgICAgICAgICAgYXZlKGRhdGFzZXQkQWdlLCBGVU4gPSBmdW5jdGlvbih4KSBtZWFuKHgsIG5hLnJtID0gVFJVRSkpLFxuICAgICAgICAgICAgICAgICAgICAgZGF0YXNldCRBZ2UpXG5kYXRhc2V0XG5gYGAifQ== -->
+<pre class="r"><code>dataset$Age = ifelse(is.na(dataset$Age),
+                     ave(dataset$Age, FUN = function(x) mean(x, na.rm = TRUE)),
+                     dataset$Age)
+dataset</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjoiZGF0YS5mcmFtZSIsIm5jb2wiOjQsIm5yb3ciOjEwfSwicmRmIjoiSDRzSUFBQUFBQUFBQm5WUzIwckRRQkRkYkJKTEE1YUN2K0JyUTF0ZktvS2t0b2g5ay9wU0VJUTFTUzhZTnlYWmVIbnpDL3JVbi9JN0ZFUlJWUFM1dXNuTzlCSnJJRGt6WjJkT1pnN2JiZmZxVnM4aWhGQ2k2NVJRWFlZR2xSK05HS1NZNGcwaCtsYktTdHlVYUdXSGFZTWtsaEE1YlpHdkNHMEUvcFVmeERJcVp4VWdYOE9nanNGT3J0RjBBeFpqMzF5dHoxd1JSaktheWJlVXp1VWNrdXh4OWdEM0FWdUFiY0RtSGZEdXBQRXcyWFdPZ084QUhxanp1ZTduVlBGUFk0VXZad3JmN2hXK2IwdVp4cVB6MmxYNXM2ZndxNU1KT2Q4dGhSK25JUHpIUjIwcHBqbWVLanZvRHpoQTBhZnF3c0tzUXNlS3RSNnRXc3JacFkrV0drQVdXbUhDUlhRTHFkNGMrQ2gwd2dJMlB5Z2VKNUU3WkxIdjVWU0xVWGh0bzNLNklvVjlyWDhHdER3bW1OMlBaTXVhSVF2aFdJeENMc1ZvZXYvTVhMTVc1WWh5d3RPZmV4VjNtUENMU3EyNlpES0JpVFRnTURiVVB3MmN6TVNOZlQ0WWNkemZETmk1SDBCU2tsdG1TOXJqYU1RRnJpTFoyQmFoWUZobnVXR0FqTHFsczE5QlNSU3NiZ01BQUE9PSJ9 -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["Country"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["Age"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Salary"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Purchased"],"name":[4],"type":["fctr"],"align":["left"]}],"data":[{"1":"1","2":"44.00000","3":"72000.00","4":"0"},{"1":"2","2":"27.00000","3":"48000.00","4":"1"},{"1":"3","2":"30.00000","3":"54000.00","4":"0"},{"1":"2","2":"38.00000","3":"61000.00","4":"0"},{"1":"3","2":"40.00000","3":"63777.78","4":"1"},{"1":"1","2":"35.00000","3":"58000.00","4":"1"},{"1":"2","2":"38.77778","3":"52000.00","4":"0"},{"1":"1","2":"48.00000","3":"79000.00","4":"1"},{"1":"3","2":"50.00000","3":"83000.00","4":"0"},{"1":"1","2":"37.00000","3":"67000.00","4":"1"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[10]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -235,17 +223,12 @@ $(document).ready(function () {
 <h4>1.2.2 Dealing with the <strong>Salary</strong> Column</h4>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuZGF0YXNldCRTYWxhcnkgPSBpZmVsc2UoaXMubmEoZGF0YXNldCRTYWxhcnkpLFxuICAgICAgICAgICAgICAgICAgICAgYXZlKGRhdGFzZXQkU2FsYXJ5LCBGVU4gPSBmdW5jdGlvbih4KSBtZWFuKHgsIG5hLnJtID0gVFJVRSkpLFxuICAgICAgICAgICAgICAgICAgICAgZGF0YXNldCRTYWxhcnkpXG5kYXRhc2V0XG5gYGBcbmBgYCJ9 -->
-<p><code>r</code>r dataset<span class="math inline">\(Salary = ifelse(is.na(dataset\)</span>Salary), ave(dataset<span class="math inline">\(Salary, FUN = function(x) mean(x, na.rm = TRUE)),  dataset\)</span>Salary) dataset</p>
-<pre><code></code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0YXNldCRTYWxhcnkgPSBpZmVsc2UoaXMubmEoZGF0YXNldCRTYWxhcnkpLFxuICAgICAgICAgICAgICAgICAgICAgYXZlKGRhdGFzZXQkU2FsYXJ5LCBGVU4gPSBmdW5jdGlvbih4KSBtZWFuKHgsIG5hLnJtID0gVFJVRSkpLFxuICAgICAgICAgICAgICAgICAgICAgZGF0YXNldCRTYWxhcnkpXG5kYXRhc2V0XG5gYGAifQ== -->
+<pre class="r"><code>dataset$Salary = ifelse(is.na(dataset$Salary),
+                     ave(dataset$Salary, FUN = function(x) mean(x, na.rm = TRUE)),
+                     dataset$Salary)
+dataset</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjoiZGF0YS5mcmFtZSIsIm5jb2wiOjQsIm5yb3ciOjEwfSwicmRmIjoiSDRzSUFBQUFBQUFBQm5WU1RVdkRRQkRkYmhKTEExYkJ2K0MxUFhpUWlpQ3BMZFZlUk5wTFJSRFdaTnNHMDAzWXBIN2MvQVU5K2FmOEhRcWlLQ3A2cm02eU02ME5OWkM4bWJlekx6TnZ0OVBzYmRrOW14QkNpV0ZRUWcwVm1sUjlDc1FrcFJTdkNURTJVbGJocWtJN1cxUkp0bW1PeUJYbStZTFFTc0F2ZVJDcmFEMnJCTFlsbVhBNVpNVURMa2RNM0VCcWRTUG1pNXlPNVFZc1JwbVplSis1U1NoVk5GVnZPVzNUYVpIc2NYWUI5d0FiZ0UzQStpM3c3cVQyTU5seERvRnZBKzdyOVpudTU1M21ueUtOTDJjYTMrNDF2bThxbWRxajg5clIrYk9uOGF1ZENUbmZEWTBmcHlDOFlDdGFpVEhOOFZUYlFYL0FBUW9PMEtNUUl1T0V4N3JJd0tLbE5pMjZLdGlJbzZzbUhrY2pISXRFNG5FWTlRRWUxRXFYQld5MlVEb2VTM2ZJWXU3bFZFc3l2S3FpY2pvbGhaSHRmeHEwUFphd2FsK3FMVXVhTElaUjRvZENpZEgwUmxxNXpRV1pJOWJHSXYyNVYzR0hZM0ZSMmY1ak00R0dDc0JoYk9wZm10aVloUU56TWZBRmptOEY3SndIa0pUVmtObU0xVWo2SXNGSkZCdFhrekJoV0dlN1lZQ012cWZUWDRLazZiVi9Bd0FBIn0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["Country"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["Age"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Salary"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Purchased"],"name":[4],"type":["fctr"],"align":["left"]}],"data":[{"1":"France","2":"44.00000","3":"72000.00","4":"No"},{"1":"Spain","2":"27.00000","3":"48000.00","4":"Yes"},{"1":"Germany","2":"30.00000","3":"54000.00","4":"No"},{"1":"Spain","2":"38.00000","3":"61000.00","4":"No"},{"1":"Germany","2":"40.00000","3":"63777.78","4":"Yes"},{"1":"France","2":"35.00000","3":"58000.00","4":"Yes"},{"1":"Spain","2":"38.77778","3":"52000.00","4":"No"},{"1":"France","2":"48.00000","3":"79000.00","4":"Yes"},{"1":"Germany","2":"50.00000","3":"83000.00","4":"No"},{"1":"France","2":"37.00000","3":"67000.00","4":"Yes"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[10]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>Function <strong><code>ifelse</code></strong> takes three arguments:</p>
@@ -265,17 +248,12 @@ $(document).ready(function () {
 </ul>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuZGF0YXNldCRDb3VudHJ5ID0gZmFjdG9yKGRhdGFzZXQkQ291bnRyeSxcbiAgICAgICAgICAgICAgICAgICAgICAgICBsZXZlbHMgPSBjKCdGcmFuY2UnLCdTcGFpbicsJ0dlcm1hbnknKSxcbiAgICAgICAgICAgICAgICAgICAgICAgICBsYWJlbHMgPSBjKDEsIDIsIDMpKVxuZGF0YXNldFxuYGBgXG5gYGAifQ== -->
-<p><code>r</code>r dataset<span class="math inline">\(Country = factor(dataset\)</span>Country, levels = c(‘France’,‘Spain’,‘Germany’), labels = c(1, 2, 3)) dataset</p>
-<pre><code></code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0YXNldCRDb3VudHJ5ID0gZmFjdG9yKGRhdGFzZXQkQ291bnRyeSxcbiAgICAgICAgICAgICAgICAgICAgICAgICBsZXZlbHMgPSBjKCdGcmFuY2UnLCdTcGFpbicsJ0dlcm1hbnknKSxcbiAgICAgICAgICAgICAgICAgICAgICAgICBsYWJlbHMgPSBjKDEsIDIsIDMpKVxuZGF0YXNldFxuYGBgIn0= -->
+<pre class="r"><code>dataset$Country = factor(dataset$Country,
+                         levels = c('France','Spain','Germany'),
+                         labels = c(1, 2, 3))
+dataset</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjoiZGF0YS5mcmFtZSIsIm5jb2wiOjQsIm5yb3ciOjEwfSwicmRmIjoiSDRzSUFBQUFBQUFBQm5WU3kwckRRQlNkVEJKTEExYkJYM0RiZ0hWaFJaRFVGckVia2JxcENNS1lUaDhZWjBvZVBuWitRVmYrbE4raElJcWlvdXZxSkhOdmJXTU5KT2ZNbWJrbjl4Nm0xV2hYbkxaRENLSEVOQ21ocHFJV1ZSK0RXS1NZNGhVaDVrcXFLbHhVNkdTYmFZRVNwaEExNDNjOVk3UVE4QXNlUklvdFp5ZkFmZzFKQmNsNnJ0RDJBeFpoM2NTdHkveFlob3FOMVZ0SysvSjJTZlo0VzREYmdIWEFCbUR0Qm5SL1ZMMGZiWHA3b0RjQmQvVCt4UGZqVnV1UFE0M1BKeHBmN3pTK3JTcWI2b1AzMHRMcnA0N0d6MlptNUgzVk5iNGZnL0dmSEkwcFRuTTYxWEhRYjBpQVFnSjBYd0l6ajNpa0Q1bDRhRzVNczZrS2RzNHhWUXZFUWwwbUlnNnYwYmpXNDJoMHlBSTIyU2dlSktIZlp4SHY1RnlMb2J4MDBUbWRrc0xJemo4Tk9oMFdNN2NicXBJNVRSYmtNQjVJb2N4b2VnWHRYTEVSNW9TbFJLUS83NVQ5ZmlMT3lodFRNUk5veUFBTnVhVi9hV0ZqTmc3TVJXOGdjSHc3WUtjOGdFVkpEWm5ONkE3RGdZaHhFcVZHYml4amh1Y2NYd2FvNkhzNi9nRTVSTzFnY0FNQUFBPT0ifQ== -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["Country"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["Age"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Salary"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Purchased"],"name":[4],"type":["fctr"],"align":["left"]}],"data":[{"1":"1","2":"44.00000","3":"72000.00","4":"No"},{"1":"2","2":"27.00000","3":"48000.00","4":"Yes"},{"1":"3","2":"30.00000","3":"54000.00","4":"No"},{"1":"2","2":"38.00000","3":"61000.00","4":"No"},{"1":"3","2":"40.00000","3":"63777.78","4":"Yes"},{"1":"1","2":"35.00000","3":"58000.00","4":"Yes"},{"1":"2","2":"38.77778","3":"52000.00","4":"No"},{"1":"1","2":"48.00000","3":"79000.00","4":"Yes"},{"1":"3","2":"50.00000","3":"83000.00","4":"No"},{"1":"1","2":"37.00000","3":"67000.00","4":"Yes"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[10]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <ul>
@@ -283,17 +261,12 @@ $(document).ready(function () {
 </ul>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuZGF0YXNldCRQdXJjaGFzZWQgPSBmYWN0b3IoZGF0YXNldCRQdXJjaGFzZWQsXG4gICAgICAgICAgICAgICAgICAgICAgICAgbGV2ZWxzID0gYygnTm8nLCdZZXMnKSxcbiAgICAgICAgICAgICAgICAgICAgICAgICBsYWJlbHMgPSBjKDAsIDEpKVxuZGF0YXNldFxuYGBgXG5gYGAifQ== -->
-<p><code>r</code>r dataset<span class="math inline">\(Purchased = factor(dataset\)</span>Purchased, levels = c(‘No’,‘Yes’), labels = c(0, 1)) dataset</p>
-<pre><code></code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0YXNldCRQdXJjaGFzZWQgPSBmYWN0b3IoZGF0YXNldCRQdXJjaGFzZWQsXG4gICAgICAgICAgICAgICAgICAgICAgICAgbGV2ZWxzID0gYygnTm8nLCdZZXMnKSxcbiAgICAgICAgICAgICAgICAgICAgICAgICBsYWJlbHMgPSBjKDAsIDEpKVxuZGF0YXNldFxuYGBgIn0= -->
+<pre class="r"><code>dataset$Purchased = factor(dataset$Purchased,
+                         levels = c('No','Yes'),
+                         labels = c(0, 1))
+dataset</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjoiZGF0YS5mcmFtZSIsIm5jb2wiOjQsIm5yb3ciOjEwfSwicmRmIjoiSDRzSUFBQUFBQUFBQm5WUzIwckRRQkRkYkJKTEFsYkJYL0Mxd2RhWGlpQ3BMV0xmcEw0VUJHRk4wZ3ZHVGRra1h0Nzhnajc1VTM2SGdpaUtpajVYTjltWlhtSU5KR2ZtN016SnpHRTdyVzdON3RxRUVFcDBuUktxeTlDZzhxTVJnMWdaWGhPaWIyU3N4RldKZG42WU5VaGlEcEhUWnZtQzBFb1lYQVpoTEtQMXZBTGtxeGpVTU5ndU5KcGV5R0xzbTZyMW1KZEVRa1lUK1phenVkd0Rrai91THVBZVlCT3dCZGk0QmQ0YjF4L0dPKzRoOEczQWZYVSsxZjI4VS96VFNPSExxY0szZTRYdm0xS20vdWkrZGxUKzdDdjhhdWRDN25kVDRjY0pDUC94VVp1TGFZR255Zzc2QXc1UTlHbHJabUZlb1dQRlVvOFdMZVhzSWtCTERTQkx6U2psaWJpQlZHLzBBeFE2WmlHYkhsaEhxZkFHTEE3OGdxb2xvaXNIbGJNVktleHIvek9nN2JPRU9UMGhXNVlNV1lwR3lURGlVb3htOTg4c05HdWlRS3lsUFB1NVgvRUdLVCt2Vk9jOEpqQ1FCaHpHaHZxbGdZT1p1SERBKzBPTzY1c2hPd3RDU01weXlYeEhaeVNHUE1GTkpCczdTWlF3ckxPOUtFUkdYZExKTDNPR05mSnRBd0FBIn0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["Country"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["Age"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Salary"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Purchased"],"name":[4],"type":["fctr"],"align":["left"]}],"data":[{"1":"1","2":"44.00000","3":"72000.00","4":"0"},{"1":"2","2":"27.00000","3":"48000.00","4":"1"},{"1":"3","2":"30.00000","3":"54000.00","4":"0"},{"1":"2","2":"38.00000","3":"61000.00","4":"0"},{"1":"3","2":"40.00000","3":"63777.78","4":"1"},{"1":"1","2":"35.00000","3":"58000.00","4":"1"},{"1":"2","2":"38.77778","3":"52000.00","4":"0"},{"1":"1","2":"48.00000","3":"79000.00","4":"1"},{"1":"3","2":"50.00000","3":"83000.00","4":"0"},{"1":"1","2":"37.00000","3":"67000.00","4":"1"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[10]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -302,9 +275,9 @@ $(document).ready(function () {
 <p><strong>For this process it is important to install and load <code>caTools</code>. </strong></p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuc2V0LnNlZWQoMTIzKVxuc3BsaXQgPSBzYW1wbGUuc3BsaXQoZGF0YXNldCRQdXJjaGFzZWQsIFNwbGl0UmF0aW8gPSAwLjgpXG5gYGBcbmBgYCJ9 -->
-<p><code>r</code>r set.seed(123) split = sample.split(dataset$Purchased, SplitRatio = 0.8)</p>
-<pre><code></code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2V0LnNlZWQoMTIzKVxuc3BsaXQgPSBzYW1wbGUuc3BsaXQoZGF0YXNldCRQdXJjaGFzZWQsIFNwbGl0UmF0aW8gPSAwLjgpXG5gYGAifQ== -->
+<pre class="r"><code>set.seed(123)
+split = sample.split(dataset$Purchased, SplitRatio = 0.8)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -312,42 +285,28 @@ $(document).ready(function () {
 <p>Now the training and test sets have to be separated so we can work on both independently, the following code get’s this acomplished:</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxudHJhaW5pbmdfc2V0ID0gc3Vic2V0KGRhdGFzZXQsIHNwbGl0ID09IFRSVUUpXG50ZXN0X3NldCA9IHN1YnNldChkYXRhc2V0LCBzcGxpdCA9PSBGQUxTRSlcbmBgYFxuYGBgIn0= -->
-<p><code>r</code>r training_set = subset(dataset, split == TRUE) test_set = subset(dataset, split == FALSE)</p>
-<pre><code></code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudHJhaW5pbmdfc2V0ID0gc3Vic2V0KGRhdGFzZXQsIHNwbGl0ID09IFRSVUUpXG50ZXN0X3NldCA9IHN1YnNldChkYXRhc2V0LCBzcGxpdCA9PSBGQUxTRSlcblxuYGBgIn0= -->
+<pre class="r"><code>training_set = subset(dataset, split == TRUE)
+test_set = subset(dataset, split == FALSE)
+</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>You can look at the <strong>training_set</strong> here:</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxudHJhaW5pbmdfc2V0XG5gYGBcbmBgYCJ9 -->
-<p><code>r</code>r training_set</p>
-<pre><code></code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudHJhaW5pbmdfc2V0XG5gYGAifQ== -->
+<pre class="r"><code>training_set</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjoiZGF0YS5mcmFtZSIsIm5jb2wiOjQsIm5yb3ciOjh9LCJyZGYiOiJINHNJQUFBQUFBQUFCblZTelVyRFFCRGViRkxiQmxxRnZvTFhCbTB2RlVHaUxhSTMwVXRCRU5Zay9jRjF0MndTZjI0K1FVKytsTStoSUFxaTRyMjZtOTJKYmF5QnpUY3pPL1BOekpjYzkvb3R0KzhpaERDeWJZeXdMVTBIeTVlRkhGUlZlSU9RM1ZCUmlUV0psZXhTRmNoQUFTMTlGZ2hXYUhRVjBWaGFhMW1tb2QwRW93Vkd1MUJZQ2lpSm9TNW5HNUFnNFVKYU0zbnFhaDUvSDJXUHYyMXd4MkRYWUEvOFlOcDVuRzc1QjhiZnUwUG0wVHlmOXpyK1BOSDRlcWJ4N1VIais3b3M3eno1TDZIMnZ3NHpBdi9qMUJEOTBjY3EyRmdmdFNiK05wdGgySC9qVjVvc3c0YU1wYnN2U3NYSVpRUlNPU1pZN3ZLVUplTFd1UGJ1TUFLaUUwSkpmbEU5U2tVd0luRVVGbGlyZ2w5N3dMenMwenVxdGVwazd0eC9CbmREa2hCdklDVFZrdUhMZkpLTU9aTk5jTU1RemhkYm9oQllUWmthS213R281UmROTnU2Y2E1MXpXQmx6blowU3djR0s0RVFFUnVPR2NoU291UThvc2FweStXejNiMkpHTE1FTnBIUjJFdDRRaURQRFRpRmlQNHBaejlPNVFyclZRTUFBQT09In0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Country"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["Age"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Salary"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Purchased"],"name":[4],"type":["fctr"],"align":["left"]}],"data":[{"1":"1","2":"44.00000","3":"72000.00","4":"0","_rn_":"1"},{"1":"2","2":"27.00000","3":"48000.00","4":"1","_rn_":"2"},{"1":"3","2":"30.00000","3":"54000.00","4":"0","_rn_":"3"},{"1":"2","2":"38.00000","3":"61000.00","4":"0","_rn_":"4"},{"1":"3","2":"40.00000","3":"63777.78","4":"1","_rn_":"5"},{"1":"2","2":"38.77778","3":"52000.00","4":"0","_rn_":"7"},{"1":"1","2":"48.00000","3":"79000.00","4":"1","_rn_":"8"},{"1":"1","2":"37.00000","3":"67000.00","4":"1","_rn_":"10"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[8]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>And the <strong>test_set</strong> here:</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxudGVzdF9zZXRcbmBgYFxuYGBgIn0= -->
-<p><code>r</code>r test_set</p>
-<pre><code></code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGVzdF9zZXRcblxuYGBgIn0= -->
+<pre class="r"><code>test_set
+</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjoiZGF0YS5mcmFtZSIsIm5jb2wiOjQsIm5yb3ciOjJ9LCJyZGYiOiJINHNJQUFBQUFBQUFCblZTeTI3Q01CRGMyQWtva1VvcjlUdUlDdjBCRUwzMFZ0RUxWemN4RUdGczVEaDkzUHJCUGZaTXUwNjhvRWJVVXVMMTdHTm1aQzhmVnROc2xRRUFBODRaTUk1aHpQQVhRUXlwMzk4QitLMUhjYjlxQzMwU0Q3M0NnWkt2VXRVWTNiVFowRDZoWUVyQmZhOHhLWlNvcWU4MGJTMEtaeXhHUi94R25uYzIvd1MvWm85QXE4Ty9saDMrdmVnS3pqcURWay9IZmdJREl4MTNaNGx0QmFlS2l4citTdFppTDBseUhNRGh3alRhMlk5dzVQT05wRUhQUW9sVEluMXFiTEVWdFN4N1UxTnIzbkthVEJZR1B2R1B3S3dVVHVScml5MFhSQTdOd1ZWRzR6RG03eS9wTlVlMkIxdzMycE9YNDJMYjZOMTQ0Z25DWFVkQlVCUkVVUngzbERFSlM4aXcxSnRLay8xRWlSZXB3bUdFSmx1UCtjRlcycEVUUk92Y0dTZW9MaXVNSXFSN0JNZGY4TUZETUswQ0FBQT0ifQ== -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Country"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["Age"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Salary"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Purchased"],"name":[4],"type":["fctr"],"align":["left"]}],"data":[{"1":"1","2":"35","3":"58000","4":"1","_rn_":"6"},{"1":"3","2":"50","3":"83000","4":"0","_rn_":"9"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -371,9 +330,9 @@ $(document).ready(function () {
 <p><span class="math display">\[x_{norm} = \frac{x-min(x)}{max(x)-min(x)} \]</span></p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxudHJhaW5pbmdfc2V0WywgMjozXSA9IHNjYWxlKHRyYWluaW5nX3NldFssIDI6M10pXG50ZXN0X3NldFssIDI6M10gPSBzY2FsZSh0ZXN0X3NldFssIDI6M10pXG5gYGBcbmBgYCJ9 -->
-<p><code>r</code>r training_set[, 2:3] = scale(training_set[, 2:3]) test_set[, 2:3] = scale(test_set[, 2:3])</p>
-<pre><code></code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudHJhaW5pbmdfc2V0WywgMjozXSA9IHNjYWxlKHRyYWluaW5nX3NldFssIDI6M10pXG50ZXN0X3NldFssIDI6M10gPSBzY2FsZSh0ZXN0X3NldFssIDI6M10pXG5gYGAifQ== -->
+<pre class="r"><code>training_set[, 2:3] = scale(training_set[, 2:3])
+test_set[, 2:3] = scale(test_set[, 2:3])</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -381,9 +340,8 @@ $(document).ready(function () {
 <p>You can see an example of the result of the process in the <code>test_set</code>:</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxudGVzdF9zZXRcbmBgYFxuYGBgIn0= -->
-<p><code>r</code>r test_set</p>
-<pre><code></code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGVzdF9zZXRcbmBgYCJ9 -->
+<pre class="r"><code>test_set</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -420,12 +378,26 @@ $(document).ready(function () {
 <p>First of all, the working directory has to be pointing to where the dataset is, then the <em>data preprocessing</em> follows. It can be done using a template, here we use the one provided in the course and make little adjustment:</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-output-begin eyJkYXRhIjoiVGhlIHdvcmtpbmcgZGlyZWN0b3J5IHdhcyBjaGFuZ2VkIHRvIEQ6L0Ryb3Bib3gvQ2xhc2VzL1VkZW15L01hY2hpbmUgTGVhcm5pbmcgQS1aL1BhcnQgMiAtIFJlZ3Jlc3Npb24vU2VjdGlvbiA0IC0gU2ltcGxlIExpbmVhciBSZWdyZXNzaW9uIGluc2lkZSBhIG5vdGVib29rIGNodW5rLiBUaGUgd29ya2luZyBkaXJlY3Rvcnkgd2lsbCBiZSByZXNldCB3aGVuIHRoZSBjaHVuayBpcyBmaW5pc2hlZCBydW5uaW5nLiBVc2UgdGhlIGtuaXRyIHJvb3QuZGlyIG9wdGlvbiBpbiB0aGUgc2V0dXAgY2h1bmsgdG8gY2hhbmdlIHRoZSB0aGUgd29ya2luZyBkaXJlY3RvcnkgZm9yIG5vdGVib29rIGNodW5rcy5cbiJ9 -->
-<pre><code>The working directory was changed to D:/Dropbox/Clases/Udemy/Machine Learning A-Z/Part 2 - Regression/Section 4 - Simple Linear Regression inside a notebook chunk. The working directory will be reset when the chunk is finished running. Use the knitr root.dir option in the setup chunk to change the the working directory for notebook chunks.</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuIyBEYXRhIFByZXByb2Nlc3NpbmcgdGVtcGxhdGVcbiMgSW1wb3J0aW5nIHRoZSBkYXRhc2V0XG5kYXRhc2V0ID0gcmVhZC5jc3YoJ1NhbGFyeV9EYXRhLmNzdicpXG4jIGRhdGFzZXQgPSBkYXRhc2V0WywgMjozXVxuIyBTcGxpdHRpbmcgdGhlIGRhdGFzZXQgaW50byB0aGUgVHJhaW5pbmcgc2V0IGFuZCBUZXN0IHNldFxuIyBpbnN0YWxsLnBhY2thZ2VzKCdjYVRvb2xzJylcbmxpYnJhcnkoY2FUb29scylcbnNldC5zZWVkKDEyMylcbnNwbGl0ID0gc2FtcGxlLnNwbGl0KGRhdGFzZXQkU2FsYXJ5LCBTcGxpdFJhdGlvID0gMi8zKVxudHJhaW5pbmdfc2V0ID0gc3Vic2V0KGRhdGFzZXQsIHNwbGl0ID09IFRSVUUpXG50ZXN0X3NldCA9IHN1YnNldChkYXRhc2V0LCBzcGxpdCA9PSBGQUxTRSlcbiMgRmVhdHVyZSBTY2FsaW5nXG4jIHRyYWluaW5nX3NldFssIDI6M10gPSBzY2FsZSh0cmFpbmluZ19zZXRbLCAyOjNdKVxuIyB0ZXN0X3NldFssIDI6M10gPSBzY2FsZSh0ZXN0X3NldFssIDI6M10pXG5gYGBcbmBgYCJ9 -->
-<p><code>r</code>r # Data Preprocessing template # Importing the dataset dataset = read.csv(‘Salary_Data.csv’) # dataset = dataset[, 2:3] # Splitting the dataset into the Training set and Test set # install.packages(‘caTools’) library(caTools) set.seed(123) split = sample.split(dataset$Salary, SplitRatio = 2/3) training_set = subset(dataset, split == TRUE) test_set = subset(dataset, split == FALSE) # Feature Scaling # training_set[, 2:3] = scale(training_set[, 2:3]) # test_set[, 2:3] = scale(test_set[, 2:3])</p>
-<pre><code></code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2V0d2QoXCJEOi9Ecm9wYm94L0NsYXNlcy9VZGVteS9NYWNoaW5lIExlYXJuaW5nIEEtWi9QYXJ0IDIgLSBSZWdyZXNzaW9uL1NlY3Rpb24gNCAtIFNpbXBsZSBMaW5lYXIgUmVncmVzc2lvblwiKVxuXG4jIERhdGEgUHJlcHJvY2Vzc2luZyB0ZW1wbGF0ZVxuXG4jIEltcG9ydGluZyB0aGUgZGF0YXNldFxuZGF0YXNldCA9IHJlYWQuY3N2KCdTYWxhcnlfRGF0YS5jc3YnKVxuIyBkYXRhc2V0ID0gZGF0YXNldFssIDI6M11cblxuIyBTcGxpdHRpbmcgdGhlIGRhdGFzZXQgaW50byB0aGUgVHJhaW5pbmcgc2V0IGFuZCBUZXN0IHNldFxuIyBpbnN0YWxsLnBhY2thZ2VzKCdjYVRvb2xzJylcbmxpYnJhcnkoY2FUb29scylcbnNldC5zZWVkKDEyMylcbnNwbGl0ID0gc2FtcGxlLnNwbGl0KGRhdGFzZXQkU2FsYXJ5LCBTcGxpdFJhdGlvID0gMi8zKVxudHJhaW5pbmdfc2V0ID0gc3Vic2V0KGRhdGFzZXQsIHNwbGl0ID09IFRSVUUpXG50ZXN0X3NldCA9IHN1YnNldChkYXRhc2V0LCBzcGxpdCA9PSBGQUxTRSlcblxuIyBGZWF0dXJlIFNjYWxpbmdcbiMgdHJhaW5pbmdfc2V0WywgMjozXSA9IHNjYWxlKHRyYWluaW5nX3NldFssIDI6M10pXG4jIHRlc3Rfc2V0WywgMjozXSA9IHNjYWxlKHRlc3Rfc2V0WywgMjozXSlcbmBgYCJ9 -->
+<pre class="r"><code>setwd(&quot;D:/Dropbox/Clases/Udemy/Machine Learning A-Z/Part 2 - Regression/Section 4 - Simple Linear Regression&quot;)
+
+# Data Preprocessing template
+
+# Importing the dataset
+dataset = read.csv('Salary_Data.csv')
+# dataset = dataset[, 2:3]
+
+# Splitting the dataset into the Training set and Test set
+# install.packages('caTools')
+library(caTools)
+set.seed(123)
+split = sample.split(dataset$Salary, SplitRatio = 2/3)
+training_set = subset(dataset, split == TRUE)
+test_set = subset(dataset, split == FALSE)
+
+# Feature Scaling
+# training_set[, 2:3] = scale(training_set[, 2:3])
+# test_set[, 2:3] = scale(test_set[, 2:3])</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -434,10 +406,11 @@ $(document).ready(function () {
 <h3>Fitting SLR to Training Set</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxucmVncmVzc29yIDwtIGxtKGZvcm11bGEgPSBTYWxhcnkgfiBZZWFyc0V4cGVyaWVuY2UsXG4gICAgICAgICAgICAgICAgZGF0YSA9IHRyYWluaW5nX3NldClcblxuc3VtbWFyeShyZWdyZXNzb3IpXG5gYGBcbmBgYCJ9 -->
-<p><code>r</code>r regressor &lt;- lm(formula = Salary ~ YearsExperience, data = training_set)</p>
-<p>summary(regressor)</p>
-<pre><code></code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVncmVzc29yIDwtIGxtKGZvcm11bGEgPSBTYWxhcnkgfiBZZWFyc0V4cGVyaWVuY2UsXG4gICAgICAgICAgICAgICAgZGF0YSA9IHRyYWluaW5nX3NldClcblxuc3VtbWFyeShyZWdyZXNzb3IpXG5gYGAifQ== -->
+<pre class="r"><code>regressor &lt;- lm(formula = Salary ~ YearsExperience,
+                data = training_set)
+
+summary(regressor)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -448,9 +421,9 @@ $(document).ready(function () {
 <p>First it is important to creat a vector of prediction, which will contain the predicted values of the <code>test_set</code> observations:</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxueV9wcmVkIDwtIHByZWRpY3QocmVncmVzc29yLCBuZXdkYXRhID0gdGVzdF9zZXQpXG5cbmBgYFxuYGBgIn0= -->
-<p><code>r</code>r y_pred &lt;- predict(regressor, newdata = test_set)</p>
-<pre><code></code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueV9wcmVkIDwtIHByZWRpY3QocmVncmVzc29yLCBuZXdkYXRhID0gdGVzdF9zZXQpXG5cbmBgYCJ9 -->
+<pre class="r"><code>y_pred &lt;- predict(regressor, newdata = test_set)
+</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -461,10 +434,18 @@ $(document).ready(function () {
 <p>First we will plot the <code>trining_set</code> results.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxubGlicmFyeShnZ3Bsb3QyKVxuIyBUaGUgcGxvdHRpbmcgd2lsbCBiZSBkb25lIHN0ZXAgYnkgc3RlcFxuXG5nZ3Bsb3QoKSArXG4gIGdlb21fcG9pbnQoYWVzKHggPSB0cmFpbmluZ19zZXQkWWVhcnNFeHBlcmllbmNlLCB5ID0gdHJhaW5pbmdfc2V0JFNhbGFyeSksXG4gICAgICAgICAgICAgY29sb3VyID0gJ3JlZCcpICsgXG4gIGdlb21fbGluZShhZXMoeCA9IHRyYWluaW5nX3NldCRZZWFyc0V4cGVyaWVuY2UsIHkgPSBwcmVkaWN0KHJlZ3Jlc3NvciwgbmV3ZGF0YSA9IHRyYWluaW5nX3NldCkpLFxuICAgICAgICAgICAgY29sb3VyID0gJ2JsdWUnKSArIFxuICBnZ3RpdGxlKCdTYWxhcnkgdnMgRXhwZXJpZW5jZSAoVHJhaW5pbmcgU2V0KScpICsgXG4gIHhsYWIoJ1llYXJzIG9mIEV4cGVyaWVuY2UnKSArIFxuICB5bGFiKCdTYWxhcnknKVxuYGBgXG5gYGAifQ== -->
-<p><code>r</code>r library(ggplot2) # The plotting will be done step by step</p>
-<p>ggplot() + geom_point(aes(x = training_set<span class="math inline">\(YearsExperience, y = training_set\)</span>Salary), colour = ‘red’) + geom_line(aes(x = training_set$YearsExperience, y = predict(regressor, newdata = training_set)), colour = ‘blue’) + ggtitle(‘Salary vs Experience (Training Set)’) + xlab(‘Years of Experience’) + ylab(‘Salary’)</p>
-<pre><code></code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShnZ3Bsb3QyKVxuIyBUaGUgcGxvdHRpbmcgd2lsbCBiZSBkb25lIHN0ZXAgYnkgc3RlcFxuXG5nZ3Bsb3QoKSArXG4gIGdlb21fcG9pbnQoYWVzKHggPSB0cmFpbmluZ19zZXQkWWVhcnNFeHBlcmllbmNlLCB5ID0gdHJhaW5pbmdfc2V0JFNhbGFyeSksXG4gICAgICAgICAgICAgY29sb3VyID0gJ3JlZCcpICsgXG4gIGdlb21fbGluZShhZXMoeCA9IHRyYWluaW5nX3NldCRZZWFyc0V4cGVyaWVuY2UsIHkgPSBwcmVkaWN0KHJlZ3Jlc3NvciwgbmV3ZGF0YSA9IHRyYWluaW5nX3NldCkpLFxuICAgICAgICAgICAgY29sb3VyID0gJ2JsdWUnKSArIFxuICBnZ3RpdGxlKCdTYWxhcnkgdnMgRXhwZXJpZW5jZSAoVHJhaW5pbmcgU2V0KScpICsgXG4gIHhsYWIoJ1llYXJzIG9mIEV4cGVyaWVuY2UnKSArIFxuICB5bGFiKCdTYWxhcnknKVxuYGBgIn0= -->
+<pre class="r"><code>library(ggplot2)
+# The plotting will be done step by step
+
+ggplot() +
+  geom_point(aes(x = training_set$YearsExperience, y = training_set$Salary),
+             colour = 'red') + 
+  geom_line(aes(x = training_set$YearsExperience, y = predict(regressor, newdata = training_set)),
+            colour = 'blue') + 
+  ggtitle('Salary vs Experience (Training Set)') + 
+  xlab('Years of Experience') + 
+  ylab('Salary')</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -474,13 +455,18 @@ $(document).ready(function () {
 <p>Now it´s time to plot the <code>test_set</code> results.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxubGlicmFyeShnZ3Bsb3QyKVxuIyBUaGUgcGxvdHRpbmcgd2lsbCBiZSBkb25lIHN0ZXAgYnkgc3RlcFxuZ2dwbG90KCkgK1xuICBnZW9tX3BvaW50KGFlcyh4ID0gdGVzdF9zZXQkWWVhcnNFeHBlcmllbmNlLCB5ID0gdGVzdF9zZXQkU2FsYXJ5KSxcbiAgICAgICAgICAgICBjb2xvdXIgPSAncmVkJykgKyBcbiAgZ2VvbV9saW5lKGFlcyh4ID0gdHJhaW5pbmdfc2V0JFllYXJzRXhwZXJpZW5jZSwgeSA9IHByZWRpY3QocmVncmVzc29yLCBuZXdkYXRhID0gdHJhaW5pbmdfc2V0KSksXG4gICAgICAgICAgICBjb2xvdXIgPSAnYmx1ZScpICsgXG4gIGdndGl0bGUoJ1NhbGFyeSB2cyBFeHBlcmllbmNlIChUZXN0IFNldCknKSArIFxuICB4bGFiKCdZZWFycyBvZiBFeHBlcmllbmNlJykgKyBcbiAgeWxhYignU2FsYXJ5JylcbmBgYFxuYGBgIn0= -->
-<p><code>r</code>r library(ggplot2) # The plotting will be done step by step ggplot() + geom_point(aes(x = test_set<span class="math inline">\(YearsExperience, y = test_set\)</span>Salary), colour = ‘red’) + geom_line(aes(x = training_set$YearsExperience, y = predict(regressor, newdata = training_set)), colour = ‘blue’) + ggtitle(‘Salary vs Experience (Test Set)’) + xlab(‘Years of Experience’) + ylab(‘Salary’)</p>
-<pre><code></code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShnZ3Bsb3QyKVxuIyBUaGUgcGxvdHRpbmcgd2lsbCBiZSBkb25lIHN0ZXAgYnkgc3RlcFxuZ2dwbG90KCkgK1xuICBnZW9tX3BvaW50KGFlcyh4ID0gdGVzdF9zZXQkWWVhcnNFeHBlcmllbmNlLCB5ID0gdGVzdF9zZXQkU2FsYXJ5KSxcbiAgICAgICAgICAgICBjb2xvdXIgPSAncmVkJykgKyBcbiAgZ2VvbV9saW5lKGFlcyh4ID0gdHJhaW5pbmdfc2V0JFllYXJzRXhwZXJpZW5jZSwgeSA9IHByZWRpY3QocmVncmVzc29yLCBuZXdkYXRhID0gdHJhaW5pbmdfc2V0KSksXG4gICAgICAgICAgICBjb2xvdXIgPSAnYmx1ZScpICsgXG4gIGdndGl0bGUoJ1NhbGFyeSB2cyBFeHBlcmllbmNlIChUZXN0IFNldCknKSArIFxuICB4bGFiKCdZZWFycyBvZiBFeHBlcmllbmNlJykgKyBcbiAgeWxhYignU2FsYXJ5JylcbmBgYCJ9 -->
+<pre class="r"><code>library(ggplot2)
+# The plotting will be done step by step
+ggplot() +
+  geom_point(aes(x = test_set$YearsExperience, y = test_set$Salary),
+             colour = 'red') + 
+  geom_line(aes(x = training_set$YearsExperience, y = predict(regressor, newdata = training_set)),
+            colour = 'blue') + 
+  ggtitle('Salary vs Experience (Test Set)') + 
+  xlab('Years of Experience') + 
+  ylab('Salary')</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-plot-begin -->
-<p><img src="data:image/png;base64,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" /></p>
-<!-- rnb-plot-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!--

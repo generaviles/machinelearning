@@ -5,11 +5,37 @@ output: html_notebook
 
 Most databases in the context of big data will have millions of entries and thousands of variables (columns), it is imposible that each column will contain independent variables, this high volume and high quantity of variables makes it easier for scientist to fall on the trap of ***multicollinearity*** (*multicolinealidad*), defined as the condition where some predictor variables (independent) are correlated with each other. This tends to produce conclussions heavily biased on one or a set of predictors more than others, rendering false results.
 
-*Need to write a bit more about the benefits or need to work with low dimension data (1-5 dimensions perhaps.)*
-
 Applying dimension reduction methods can help us acomplish the following:
 
-  - Redduce the number of predictor components.
+  - Reduce the number of predictor components.
   - Help ensure that these components are independent.
-  - PRovide a framework for interpretability of the results.
+  - Provide a framework for interpretability of the results.
 
+One could raise the question that if we can take a hold of computational power nowadays there is no reason to use DRM. The argument for their use is found in the mathematics of the precesses: <br \><br \>
+Many of the methods used in machine learning are statistical, which means that they count data in regions of space. When the dimensionality of a dataset grows, the density of observations becomes lower in proportion to the growth of dimensionality and, since the methods used primarily count events in regions of space, this will eventually leave whole regions without events to count still checked by the algorithm anyway, resulting in a waste of resources.<br \><br \>
+This is the reason why DRM methods are used in machine learning.
+
+###How to Deal With high Dimensionality
+
+
+  - Use of domain knowledge.
+  - Make assumptions about dimensions.
+    - Assume *independence*: Count along each dimension separately.
+    - Assume *smoothness*: Nearby regions of space should have similar distributions of classes.
+    - Assume *symmetry* also known as *exchangeability*: the order of the attributes does not matter.
+  - Reduce dimensionality.
+    - Create a new set of dimensions (variables or components)
+    - The goal is to represent isntances with fewer variables.
+    - This is done with the following points in mind:
+    - Try to preserve as much structure in teh data as possible.
+    - Keep the selection *discriminative*: which means that the structure generated has to allow analysis still make good predictions or regressions or selections, etc, etc.
+<br \><br \>
+
+###Feature Selection
+  - The simplest way of reducing dimensionality is **Feature Selection**:
+    - Picks a subset of the original attributes that do the best job at encoding my instances for whatever porpuse I want.
+    - I should use this if I am wanting to pick good class "predictors", or if I want to predict the same outcome with less than the total of attributes in the dataset without lossing much predictive power.
+
+###Feature Extraction
+  - It takes all of the original attributes and combines them in some way to form a smaller number of attributes. This is done through a function that takes the initial attributes and converts them into the new set of less components.
+  - There are many approximations to this, one of them does it linearly (**Principal Components Analysis or pCA**).

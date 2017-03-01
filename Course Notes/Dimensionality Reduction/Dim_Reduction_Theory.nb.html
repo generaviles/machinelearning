@@ -173,16 +173,53 @@ $(document).ready(function () {
 
 <!-- rnb-text-begin -->
 <p>Most databases in the context of big data will have millions of entries and thousands of variables (columns), it is imposible that each column will contain independent variables, this high volume and high quantity of variables makes it easier for scientist to fall on the trap of <strong><em>multicollinearity</em></strong> (<em>multicolinealidad</em>), defined as the condition where some predictor variables (independent) are correlated with each other. This tends to produce conclussions heavily biased on one or a set of predictors more than others, rendering false results.</p>
-<p><em>Need to write a bit more about the benefits or need to work with low dimension data (1-5 dimensions perhaps.)</em></p>
 <p>Applying dimension reduction methods can help us acomplish the following:</p>
 <ul>
-<li>Redduce the number of predictor components.</li>
+<li>Reduce the number of predictor components.</li>
 <li>Help ensure that these components are independent.</li>
-<li>PRovide a framework for interpretability of the results.</li>
+<li>Provide a framework for interpretability of the results.</li>
+</ul>
+<p>One could raise the question that if we can take a hold of computational power nowadays there is no reason to use DRM. The argument for their use is found in the mathematics of the precesses: <br \><br \> Many of the methods used in machine learning are statistical, which means that they count data in regions of space. When the dimensionality of a dataset grows, the density of observations becomes lower in proportion to the growth of dimensionality and, since the methods used primarily count events in regions of space, this will eventually leave whole regions without events to count still checked by the algorithm anyway, resulting in a waste of resources.<br \><br \> This is the reason why DRM methods are used in machine learning.</p>
+<div id="how-to-deal-with-high-dimensionality" class="section level3">
+<h3>How to Deal With high Dimensionality</h3>
+<ul>
+<li>Use of domain knowledge.</li>
+<li>Make assumptions about dimensions.
+<ul>
+<li>Assume <em>independence</em>: Count along each dimension separately.</li>
+<li>Assume <em>smoothness</em>: Nearby regions of space should have similar distributions of classes.</li>
+<li>Assume <em>symmetry</em> also known as <em>exchangeability</em>: the order of the attributes does not matter.</li>
+</ul></li>
+<li>Reduce dimensionality.
+<ul>
+<li>Create a new set of dimensions (variables or components)</li>
+<li>The goal is to represent isntances with fewer variables.</li>
+<li>This is done with the following points in mind:</li>
+<li>Try to preserve as much structure in teh data as possible.</li>
+<li>Keep the selection <em>discriminative</em>: which means that the structure generated has to allow analysis still make good predictions or regressions or selections, etc, etc. <br \><br \></li>
+</ul></li>
+</ul>
+</div>
+<div id="feature-selection" class="section level3">
+<h3>Feature Selection</h3>
+<ul>
+<li>The simplest way of reducing dimensionality is <strong>Feature Selection</strong>:
+<ul>
+<li>Picks a subset of the original attributes that do the best job at encoding my instances for whatever porpuse I want.</li>
+<li>I should use this if I am wanting to pick good class “predictors”, or if I want to predict the same outcome with less than the total of attributes in the dataset without lossing much predictive power.</li>
+</ul></li>
+</ul>
+</div>
+<div id="feature-extraction" class="section level3">
+<h3>Feature Extraction</h3>
+<ul>
+<li>It takes all of the original attributes and combines them in some way to form a smaller number of attributes. This is done through a function that takes the initial attributes and converts them into the new set of less components.</li>
+<li>There are many approximations to this, one of them does it linearly (<strong>Principal Components Analysis or pCA</strong>).</li>
 </ul>
 <!-- rnb-text-end -->
+</div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkRpbWVuc2lvbmFsaXR5IFJlZHVjdGlvbiBHZW5lcmFsaXRpZXMiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpNb3N0IGRhdGFiYXNlcyBpbiB0aGUgY29udGV4dCBvZiBiaWcgZGF0YSB3aWxsIGhhdmUgbWlsbGlvbnMgb2YgZW50cmllcyBhbmQgdGhvdXNhbmRzIG9mIHZhcmlhYmxlcyAoY29sdW1ucyksIGl0IGlzIGltcG9zaWJsZSB0aGF0IGVhY2ggY29sdW1uIHdpbGwgY29udGFpbiBpbmRlcGVuZGVudCB2YXJpYWJsZXMsIHRoaXMgaGlnaCB2b2x1bWUgYW5kIGhpZ2ggcXVhbnRpdHkgb2YgdmFyaWFibGVzIG1ha2VzIGl0IGVhc2llciBmb3Igc2NpZW50aXN0IHRvIGZhbGwgb24gdGhlIHRyYXAgb2YgKioqbXVsdGljb2xsaW5lYXJpdHkqKiogKCptdWx0aWNvbGluZWFsaWRhZCopLCBkZWZpbmVkIGFzIHRoZSBjb25kaXRpb24gd2hlcmUgc29tZSBwcmVkaWN0b3IgdmFyaWFibGVzIChpbmRlcGVuZGVudCkgYXJlIGNvcnJlbGF0ZWQgd2l0aCBlYWNoIG90aGVyLiBUaGlzIHRlbmRzIHRvIHByb2R1Y2UgY29uY2x1c3Npb25zIGhlYXZpbHkgYmlhc2VkIG9uIG9uZSBvciBhIHNldCBvZiBwcmVkaWN0b3JzIG1vcmUgdGhhbiBvdGhlcnMsIHJlbmRlcmluZyBmYWxzZSByZXN1bHRzLg0KDQoqTmVlZCB0byB3cml0ZSBhIGJpdCBtb3JlIGFib3V0IHRoZSBiZW5lZml0cyBvciBuZWVkIHRvIHdvcmsgd2l0aCBsb3cgZGltZW5zaW9uIGRhdGEgKDEtNSBkaW1lbnNpb25zIHBlcmhhcHMuKSoNCg0KQXBwbHlpbmcgZGltZW5zaW9uIHJlZHVjdGlvbiBtZXRob2RzIGNhbiBoZWxwIHVzIGFjb21wbGlzaCB0aGUgZm9sbG93aW5nOg0KDQogIC0gUmVkZHVjZSB0aGUgbnVtYmVyIG9mIHByZWRpY3RvciBjb21wb25lbnRzLg0KICAtIEhlbHAgZW5zdXJlIHRoYXQgdGhlc2UgY29tcG9uZW50cyBhcmUgaW5kZXBlbmRlbnQuDQogIC0gUFJvdmlkZSBhIGZyYW1ld29yayBmb3IgaW50ZXJwcmV0YWJpbGl0eSBvZiB0aGUgcmVzdWx0cy4NCg0K</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkRpbWVuc2lvbmFsaXR5IFJlZHVjdGlvbiBHZW5lcmFsaXRpZXMiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpNb3N0IGRhdGFiYXNlcyBpbiB0aGUgY29udGV4dCBvZiBiaWcgZGF0YSB3aWxsIGhhdmUgbWlsbGlvbnMgb2YgZW50cmllcyBhbmQgdGhvdXNhbmRzIG9mIHZhcmlhYmxlcyAoY29sdW1ucyksIGl0IGlzIGltcG9zaWJsZSB0aGF0IGVhY2ggY29sdW1uIHdpbGwgY29udGFpbiBpbmRlcGVuZGVudCB2YXJpYWJsZXMsIHRoaXMgaGlnaCB2b2x1bWUgYW5kIGhpZ2ggcXVhbnRpdHkgb2YgdmFyaWFibGVzIG1ha2VzIGl0IGVhc2llciBmb3Igc2NpZW50aXN0IHRvIGZhbGwgb24gdGhlIHRyYXAgb2YgKioqbXVsdGljb2xsaW5lYXJpdHkqKiogKCptdWx0aWNvbGluZWFsaWRhZCopLCBkZWZpbmVkIGFzIHRoZSBjb25kaXRpb24gd2hlcmUgc29tZSBwcmVkaWN0b3IgdmFyaWFibGVzIChpbmRlcGVuZGVudCkgYXJlIGNvcnJlbGF0ZWQgd2l0aCBlYWNoIG90aGVyLiBUaGlzIHRlbmRzIHRvIHByb2R1Y2UgY29uY2x1c3Npb25zIGhlYXZpbHkgYmlhc2VkIG9uIG9uZSBvciBhIHNldCBvZiBwcmVkaWN0b3JzIG1vcmUgdGhhbiBvdGhlcnMsIHJlbmRlcmluZyBmYWxzZSByZXN1bHRzLg0KDQpBcHBseWluZyBkaW1lbnNpb24gcmVkdWN0aW9uIG1ldGhvZHMgY2FuIGhlbHAgdXMgYWNvbXBsaXNoIHRoZSBmb2xsb3dpbmc6DQoNCiAgLSBSZWR1Y2UgdGhlIG51bWJlciBvZiBwcmVkaWN0b3IgY29tcG9uZW50cy4NCiAgLSBIZWxwIGVuc3VyZSB0aGF0IHRoZXNlIGNvbXBvbmVudHMgYXJlIGluZGVwZW5kZW50Lg0KICAtIFByb3ZpZGUgYSBmcmFtZXdvcmsgZm9yIGludGVycHJldGFiaWxpdHkgb2YgdGhlIHJlc3VsdHMuDQoNCk9uZSBjb3VsZCByYWlzZSB0aGUgcXVlc3Rpb24gdGhhdCBpZiB3ZSBjYW4gdGFrZSBhIGhvbGQgb2YgY29tcHV0YXRpb25hbCBwb3dlciBub3dhZGF5cyB0aGVyZSBpcyBubyByZWFzb24gdG8gdXNlIERSTS4gVGhlIGFyZ3VtZW50IGZvciB0aGVpciB1c2UgaXMgZm91bmQgaW4gdGhlIG1hdGhlbWF0aWNzIG9mIHRoZSBwcmVjZXNzZXM6IDxiciBcPjxiciBcPg0KTWFueSBvZiB0aGUgbWV0aG9kcyB1c2VkIGluIG1hY2hpbmUgbGVhcm5pbmcgYXJlIHN0YXRpc3RpY2FsLCB3aGljaCBtZWFucyB0aGF0IHRoZXkgY291bnQgZGF0YSBpbiByZWdpb25zIG9mIHNwYWNlLiBXaGVuIHRoZSBkaW1lbnNpb25hbGl0eSBvZiBhIGRhdGFzZXQgZ3Jvd3MsIHRoZSBkZW5zaXR5IG9mIG9ic2VydmF0aW9ucyBiZWNvbWVzIGxvd2VyIGluIHByb3BvcnRpb24gdG8gdGhlIGdyb3d0aCBvZiBkaW1lbnNpb25hbGl0eSBhbmQsIHNpbmNlIHRoZSBtZXRob2RzIHVzZWQgcHJpbWFyaWx5IGNvdW50IGV2ZW50cyBpbiByZWdpb25zIG9mIHNwYWNlLCB0aGlzIHdpbGwgZXZlbnR1YWxseSBsZWF2ZSB3aG9sZSByZWdpb25zIHdpdGhvdXQgZXZlbnRzIHRvIGNvdW50IHN0aWxsIGNoZWNrZWQgYnkgdGhlIGFsZ29yaXRobSBhbnl3YXksIHJlc3VsdGluZyBpbiBhIHdhc3RlIG9mIHJlc291cmNlcy48YnIgXD48YnIgXD4NClRoaXMgaXMgdGhlIHJlYXNvbiB3aHkgRFJNIG1ldGhvZHMgYXJlIHVzZWQgaW4gbWFjaGluZSBsZWFybmluZy4NCg0KIyMjSG93IHRvIERlYWwgV2l0aCBoaWdoIERpbWVuc2lvbmFsaXR5DQoNCg0KICAtIFVzZSBvZiBkb21haW4ga25vd2xlZGdlLg0KICAtIE1ha2UgYXNzdW1wdGlvbnMgYWJvdXQgZGltZW5zaW9ucy4NCiAgICAtIEFzc3VtZSAqaW5kZXBlbmRlbmNlKjogQ291bnQgYWxvbmcgZWFjaCBkaW1lbnNpb24gc2VwYXJhdGVseS4NCiAgICAtIEFzc3VtZSAqc21vb3RobmVzcyo6IE5lYXJieSByZWdpb25zIG9mIHNwYWNlIHNob3VsZCBoYXZlIHNpbWlsYXIgZGlzdHJpYnV0aW9ucyBvZiBjbGFzc2VzLg0KICAgIC0gQXNzdW1lICpzeW1tZXRyeSogYWxzbyBrbm93biBhcyAqZXhjaGFuZ2VhYmlsaXR5KjogdGhlIG9yZGVyIG9mIHRoZSBhdHRyaWJ1dGVzIGRvZXMgbm90IG1hdHRlci4NCiAgLSBSZWR1Y2UgZGltZW5zaW9uYWxpdHkuDQogICAgLSBDcmVhdGUgYSBuZXcgc2V0IG9mIGRpbWVuc2lvbnMgKHZhcmlhYmxlcyBvciBjb21wb25lbnRzKQ0KICAgIC0gVGhlIGdvYWwgaXMgdG8gcmVwcmVzZW50IGlzbnRhbmNlcyB3aXRoIGZld2VyIHZhcmlhYmxlcy4NCiAgICAtIFRoaXMgaXMgZG9uZSB3aXRoIHRoZSBmb2xsb3dpbmcgcG9pbnRzIGluIG1pbmQ6DQogICAgLSBUcnkgdG8gcHJlc2VydmUgYXMgbXVjaCBzdHJ1Y3R1cmUgaW4gdGVoIGRhdGEgYXMgcG9zc2libGUuDQogICAgLSBLZWVwIHRoZSBzZWxlY3Rpb24gKmRpc2NyaW1pbmF0aXZlKjogd2hpY2ggbWVhbnMgdGhhdCB0aGUgc3RydWN0dXJlIGdlbmVyYXRlZCBoYXMgdG8gYWxsb3cgYW5hbHlzaXMgc3RpbGwgbWFrZSBnb29kIHByZWRpY3Rpb25zIG9yIHJlZ3Jlc3Npb25zIG9yIHNlbGVjdGlvbnMsIGV0YywgZXRjLg0KPGJyIFw+PGJyIFw+DQoNCiMjI0ZlYXR1cmUgU2VsZWN0aW9uDQogIC0gVGhlIHNpbXBsZXN0IHdheSBvZiByZWR1Y2luZyBkaW1lbnNpb25hbGl0eSBpcyAqKkZlYXR1cmUgU2VsZWN0aW9uKio6DQogICAgLSBQaWNrcyBhIHN1YnNldCBvZiB0aGUgb3JpZ2luYWwgYXR0cmlidXRlcyB0aGF0IGRvIHRoZSBiZXN0IGpvYiBhdCBlbmNvZGluZyBteSBpbnN0YW5jZXMgZm9yIHdoYXRldmVyIHBvcnB1c2UgSSB3YW50Lg0KICAgIC0gSSBzaG91bGQgdXNlIHRoaXMgaWYgSSBhbSB3YW50aW5nIHRvIHBpY2sgZ29vZCBjbGFzcyAicHJlZGljdG9ycyIsIG9yIGlmIEkgd2FudCB0byBwcmVkaWN0IHRoZSBzYW1lIG91dGNvbWUgd2l0aCBsZXNzIHRoYW4gdGhlIHRvdGFsIG9mIGF0dHJpYnV0ZXMgaW4gdGhlIGRhdGFzZXQgd2l0aG91dCBsb3NzaW5nIG11Y2ggcHJlZGljdGl2ZSBwb3dlci4NCg0KIyMjRmVhdHVyZSBFeHRyYWN0aW9uDQogIC0gSXQgdGFrZXMgYWxsIG9mIHRoZSBvcmlnaW5hbCBhdHRyaWJ1dGVzIGFuZCBjb21iaW5lcyB0aGVtIGluIHNvbWUgd2F5IHRvIGZvcm0gYSBzbWFsbGVyIG51bWJlciBvZiBhdHRyaWJ1dGVzLiBUaGlzIGlzIGRvbmUgdGhyb3VnaCBhIGZ1bmN0aW9uIHRoYXQgdGFrZXMgdGhlIGluaXRpYWwgYXR0cmlidXRlcyBhbmQgY29udmVydHMgdGhlbSBpbnRvIHRoZSBuZXcgc2V0IG9mIGxlc3MgY29tcG9uZW50cy4NCiAgLSBUaGVyZSBhcmUgbWFueSBhcHByb3hpbWF0aW9ucyB0byB0aGlzLCBvbmUgb2YgdGhlbSBkb2VzIGl0IGxpbmVhcmx5ICgqKlByaW5jaXBhbCBDb21wb25lbnRzIEFuYWx5c2lzIG9yIHBDQSoqKS4NCg==</div>
 
 
 

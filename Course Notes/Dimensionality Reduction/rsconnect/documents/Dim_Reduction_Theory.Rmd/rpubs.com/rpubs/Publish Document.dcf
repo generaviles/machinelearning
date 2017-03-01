@@ -1,0 +1,8 @@
+name: Publish Document
+title:
+account: rpubs
+server: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/248692/77cc6ec2c46d4faf99627c8eb14b0fbc
+bundleId: https://api.rpubs.com/api/v1/document/248692/77cc6ec2c46d4faf99627c8eb14b0fbc
+url: http://rpubs.com/generaviles/248692
+when: 1486670080.21209
